@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import com.example.jsonplaceholder.helpers.QueryUser
 import com.example.jsonplaceholder.helpers.User
 import retrofit2.Call
@@ -40,6 +41,11 @@ class UsersActivity : AppCompatActivity() {
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
                 println("error: $call")
                 println("t: ${t.localizedMessage}")
+                Toast.makeText(
+                    this@UsersActivity,
+                    "Oops - something went wrong",
+                    Toast.LENGTH_LONG
+                ).show()
             }
 
         }
