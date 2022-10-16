@@ -9,6 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 interface UsersService {
     @GET("/users")
     fun getUsers(): Call<List<User>>
+    @GET("/users")
+    fun getUsersList():Call<ArrayList<User>>
 }
 
 data class User (
@@ -29,6 +31,10 @@ class QueryUser{
     }
     fun getUsers(callback: Callback<List<User>>){
         val call = service.getUsers()
+        call.enqueue(callback)
+    }
+    fun getUsersList(callback: Callback<ArrayList<User>>){
+        val call = service.getUsersList()
         call.enqueue(callback)
     }
 }

@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UsersActivity">
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_recycler_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/user_list_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_margin="15dp"
         />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

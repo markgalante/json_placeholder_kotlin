@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         val postsBtn = findViewById<Button>(R.id.btn_posts)
         val albumsBtn = findViewById<Button>(R.id.btn_albums)
         val usersBtn = findViewById<Button>(R.id.btn_users)
+        val usersDetailBtn = findViewById<Button>(R.id.btn_users_detail)
 
         postsBtn.setOnClickListener {
             val intent = Intent(
@@ -34,6 +35,13 @@ class MainActivity : AppCompatActivity() {
                 applicationContext,
                 UsersActivity::class.java
             )
+            startActivity(intent)
+        }
+        usersDetailBtn.setOnClickListener {
+            val intent = Intent (
+                applicationContext,
+                UserDetailedActivity::class.java
+                )
             startActivity(intent)
         }
     }
